@@ -11,17 +11,24 @@ user-scalable=no;" />
 src="phonegap.js"></script>
 <script type="text/javascript" charset="utf-8">
 function onBodyLoad() {
-document.addEventListener("deviceready",showPrompt,
+document.addEventListener("deviceready",onDeviceReady,onConfirm,
 false);
 }
-function showPrompt() {
-    navigator.notification.prompt(
-        'Please enter your name',  // message
-        onPrompt,                  // callback to invoke
-        'Registration',            // title
-        ['Ok','Exit']              // buttonLabels
-    );
+function onDeviceReady() {
+navigator.notification.alert("PhoneGap is ready!");
 }
+    
+}
+function onConfirm(buttonIndex) {
+    alert('You selected button ' + buttonIndex);
+}
+
+navigator.notification.confirm(
+    'You are the winner!', // message
+     onConfirm,            // callback to invoke with index of button pressed
+    'Game Over',           // title
+    ['Restart','Exit']     // buttonLabels
+);
 </script>
 </head>
 <body onload="onBodyLoad()">
