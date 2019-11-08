@@ -19,9 +19,17 @@ function conf() {
 navigator.notification.confirm('You are the winner!');
 
 
-function prompt() {
-navigator.notification.prompt('Please enter your name');
+function onPrompt(results) {
+    alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 }
+
+navigator.notification.prompt(
+    'Please enter your name',  // message
+    onPrompt,                  // callback to invoke
+    'Registration',            // title
+    ['Ok','Exit'],             // buttonLabels
+    'Jane Doe'                 // defaultText
+);
 
 function beep() {
 navigator.notification.beep(2);
@@ -42,7 +50,7 @@ navigator.notification.beep(2);
 
 <input id="clickMe2" type="button" value="confirm" onclick="conf();" />
 
-<input id="clickMe3" type="button" value="prompt" onclick="prompt();" />
+<input id="clickMe3" type="button" value="prompt" onclick="onPrompt(results);" />
 
 <input id="clickMe4" type="button" value="beep" onclick="beep();" />
 </body>
