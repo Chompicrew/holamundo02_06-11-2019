@@ -11,11 +11,16 @@ user-scalable=no;" />
 src="phonegap.js"></script>
 <script type="text/javascript" charset="utf-8">
 function onBodyLoad() {
-document.addEventListener("deviceready",onDeviceReady,
+document.addEventListener("deviceready",showPrompt,
 false);
 }
-function onDeviceReady() {
-navigator.notification.prompt('porfavor ingresa tu nombre', onPrompt);
+function showPrompt() {
+    navigator.notification.prompt(
+        'Please enter your name',  // message
+        onPrompt,                  // callback to invoke
+        'Registration',            // title
+        ['Ok','Exit']              // buttonLabels
+    );
 }
 </script>
 </head>
