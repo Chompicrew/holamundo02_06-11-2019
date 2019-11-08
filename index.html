@@ -10,10 +10,7 @@ user-scalable=no;" />
 <script type="text/javascript" charset="utf-8"
 src="phonegap.js"></script>
 <script type="text/javascript" charset="utf-8">
-function onBodyLoad() {
-document.addEventListener("deviceready",onDeviceReady,
-false);
-}
+
 function onDeviceReady() {
 navigator.notification.alert("PhoneGap is ready!");
 }
@@ -35,7 +32,11 @@ navigator.notification.beep(2);}
 
 </script>
 </head>
-<body onload="onBodyLoad()">
+<body>
+	
+<h1>HelloWorld2</h1>
+<p>This is a sample PhoneGap application.</p>
+<p>Luis armando ortiz salinas</p>
 	<input id="clickMe1" type="button" value="alert" onclick="onDeviceReady();" />
 
 <input id="clickMe2" type="button" value="confirm" onclick="conf();" />
@@ -43,8 +44,5 @@ navigator.notification.beep(2);}
 <input id="clickMe3" type="button" value="prompt" onclick="prompt();" />
 
 <input id="clickMe4" type="button" value="beep" onclick="beep();" />
-<h1>HelloWorld2</h1>
-<p>This is a sample PhoneGap application.</p>
-<p>Luis armando ortiz salinas</p>
 </body>
 </html>
