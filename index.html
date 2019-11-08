@@ -15,8 +15,7 @@ document.addEventListener("deviceready",onDeviceReady,
 false);
 }
 function onDeviceReady() {
-navigator.notification.alert("PhoneGap is ready!");
-	navigator.notification.prompt('porfavor ingresa tu nombre');
+navigator.notification.prompt('porfavor ingresa tu nombre', onPrompt);
 
 </script>
 </head>
